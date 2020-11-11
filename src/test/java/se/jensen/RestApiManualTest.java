@@ -1,5 +1,6 @@
 package se.jensen;
 
+import ch.qos.logback.core.net.SyslogOutputStream;
 import org.junit.experimental.categories.Category;
 import se.jensen.api.EmployeeModel;
 import se.jensen.test.category.ManualTest;
@@ -8,9 +9,11 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
 @Category(ManualTest.class)
 public class RestApiManualTest {
     public static void main(String[] args) {
+        System.out.println("hello!");
         printAllEmployees();
         List<EmployeeModel> employeeModelsById = getAllEmployees().stream()
                 .map(employeeModel -> {
